@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>yudake</title>
   
-  <subtitle>yudake</subtitle>
+  <subtitle>工作与生活</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yudake.github.io/"/>
