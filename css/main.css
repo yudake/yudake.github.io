@@ -471,6 +471,7 @@ body {
   width: 100%;
   min-height: 50px;
   background-color: #ccc;
+  opacity: 0.9;
 }
 .footer-inner {
   box-sizing: border-box;
@@ -1824,7 +1825,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d0b44d;
+  background: #5471ff;
 }
 .links-of-blogroll {
   font-size: 13px;
