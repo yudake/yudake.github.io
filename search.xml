@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>第一篇尝试</title>
-    <url>/2019/12/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%B0%9D%E8%AF%95/</url>
-    <content><![CDATA[<script>
+    <title>Reinforcement-learning</title>
+    <url>/2019/12/06/Reinforcement-learning/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h3 id="强化学习的两大特点："><a href="#强化学习的两大特点：" class="headerlink" title="强化学习的两大特点："></a>强化学习的两大特点：</h3><ul>
+<li>试错搜索：强化学习过程中不会有label反馈给模型，而是让模型学习哪种action可以获得最大的reward。</li>
+<li>延迟奖励：大部分情况下，当前的action不但会影响此刻返回的reward，还会影响接下来序列的reward.</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="强化学习的组成："><a href="#强化学习的组成：" class="headerlink" title="强化学习的组成："></a>强化学习的组成：</h3><ul>
+<li>智能体（agent）：个人理解就是模型</li>
+<li>状态（state）</li>
+<li>奖励（reward）</li>
+<li>动作（action）</li>
+<li>环境（environment）</li>
+</ul>
+<h3 id="RLbook2018中，将强化学习分为以下几个要素："><a href="#RLbook2018中，将强化学习分为以下几个要素：" class="headerlink" title="RLbook2018中，将强化学习分为以下几个要素："></a>RLbook2018中，将强化学习分为以下几个要素：</h3><ul>
+<li>智能体（agent）</li>
+<li>环境（environment）</li>
+<li>策略（policy）：就是定义了一个映射，当感知到了environment处于何种state时应该做出的action</li>
+<li>奖励信号(reward signal)：每一步，environment都会返回给agent一个数值作为reward。目标就是使reward长期最大化</li>
+<li>价值函数（value function）：reward是即使反馈的信号，value function用来衡量长期运行的最优值</li>
+<li>模型（model）：model是用来模拟environment，推断出environment的表现</li>
+</ul>
+<h3 id="强化学习的分类："><a href="#强化学习的分类：" class="headerlink" title="强化学习的分类："></a>强化学习的分类：</h3><ul>
+<li>Model-based：基于model来解决强化学习问题。</li>
+<li>Model-free：不需要使用model模拟environment。一般model-free直接在真实环境中学习，所以不需要构建model</li>
+</ul>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -22,6 +47,12 @@
             document.body.appendChild(img);
           });
       </script>]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>强化学习</tag>
+      </tags>
   </entry>
   <entry>
     <title>article title</title>
