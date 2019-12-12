@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yudake.github.io/"/>
-  <updated>2019-12-10T12:05:24.527Z</updated>
+  <updated>2019-12-12T13:25:07.432Z</updated>
   <id>http://yudake.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Remove Nth Node From End of List</title>
+    <link href="http://yudake.github.io/2019/12/12/Remove-Nth-Node-From-End-of-List/"/>
+    <id>http://yudake.github.io/2019/12/12/Remove-Nth-Node-From-End-of-List/</id>
+    <published>2019-12-12T13:17:35.000Z</published>
+    <updated>2019-12-12T13:25:07.432Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h3><h3 id="Given-a-linked-list-remove-the-n-th-node-from-the-end-of-list-and-return-its-head"><a href="#Given-a-linked-list-remove-the-n-th-node-from-the-end-of-list-and-return-its-head" class="headerlink" title="Given a linked list, remove the n-th node from the end of list and return its head."></a>Given a linked list, remove the <em>n</em>-th node from the end of list and return its head.</h3><p><strong>Example:</strong></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.</span></pre></td></tr></tbody></table></figure><p><strong>Note:</strong></p><p>Given <em>n</em> will always be valid.</p><p><strong>Follow up:</strong></p><p>Could you do this in one pass?</p><p>去除单向链表中的倒数第n个节点。n总是有效的，需要只遍历一遍</p><h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;题目介绍&quot;&gt;&lt;a href=&quot;#题目介绍&quot; class=&quot;headerlink&quot; title=&quot;题目介绍&quot;&gt;&lt;/a&gt;题目介绍&lt;/h3&gt;&lt;h3 id=&quot;Given-a-linked-list-remove-the-n-th-node-from-the-end-of-
+      
+    
+    </summary>
+    
+    
+      <category term="每日一练" scheme="http://yudake.github.io/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%BB%83/"/>
+    
+    
+      <category term="算法题" scheme="http://yudake.github.io/tags/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>Letter Combinations of a Phone Number</title>
