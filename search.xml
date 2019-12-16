@@ -155,6 +155,8 @@
 <li>Open brackets must be closed in the correct order.</li>
 </ol>
 <p>Note that an empty string is also considered valid.</p>
+<a id="more"></a>
+
 <p><strong>Example 1:</strong></p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Input: "()"</span></pre></td></tr><tr><td class="code"><pre><span class="line">Output: true</span></pre></td></tr></tbody></table></figure>
 
