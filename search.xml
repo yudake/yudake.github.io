@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Reverse Nodes in k-Group</title>
+    <url>/2019/12/17/Reverse-Nodes-in-k-Group/</url>
+    <content><![CDATA[<h3 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h3><p>Given a linked list, reverse the nodes of a linked list <em>k</em> at a time and return its modified list.</p>
+<p><em>k</em> is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of <em>k</em> then left-out nodes in the end should remain as it is.</p>
+<p><strong>Example:</strong></p>
+<p>Given this linked list: <code>1-&gt;2-&gt;3-&gt;4-&gt;5</code></p>
+<p>For <em>k</em> = 2, you should return: <code>2-&gt;1-&gt;4-&gt;3-&gt;5</code></p>
+<p>For <em>k</em> = 3, you should return: <code>3-&gt;2-&gt;1-&gt;4-&gt;5</code></p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Only constant extra memory is allowed.</li>
+<li>You may not alter the values in the list’s nodes, only nodes itself may be changed.</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"> * struct ListNode {</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"> *     int val;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"> *     ListNode *next;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) {}</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"> * };</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"> */</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">public</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function">ListNode* <span class="title">reverseKGroup</span><span class="params">(ListNode* head, <span class="keyword">int</span> k)</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> (k &lt; <span class="number">2</span>) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">return</span> head;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="function">ListNode <span class="title">first</span><span class="params">(<span class="number">-1</span>)</span></span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        first.next = head;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        ListNode* pre = &amp;first;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        ListNode* node = pre;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> (node-&gt;next == <span class="literal">NULL</span>) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">                <span class="keyword">return</span> pre-&gt;next;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            }</span></pre></td></tr><tr><td class="code"><pre><span class="line">            node = node-&gt;next;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        ListNode* tmp = head;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">do</span> {</span></pre></td></tr><tr><td class="code"><pre><span class="line">            tmp = head-&gt;next;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            head-&gt;next = tmp-&gt;next;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            tmp-&gt;next = pre-&gt;next;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            pre-&gt;next = tmp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        } <span class="keyword">while</span> (tmp != node);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        head-&gt;next = reverseKGroup(head-&gt;next, k);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> pre-&gt;next;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line">};</span></pre></td></tr></tbody></table></figure>
+
+<p>Runtime: <strong>16 ms</strong></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>每日一练</category>
+      </categories>
+      <tags>
+        <tag>算法题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyTorch入门</title>
+    <url>/2019/12/17/PyTorch%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>目前我是在mac上使用conda进行安装，安装方式很简单</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">conda install -c pytorch pytorch</span></pre></td></tr></tbody></table></figure>
+
+<p>Anaconda在自己的个人机器上使用非常方便，很多扩展包已经预先安装好了。安装新的包也很方便，所以建议在个人使用的开发机可以先安装一个anaconda。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>PyTorch</category>
+      </categories>
+      <tags>
+        <tag>PyTorch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Swap Nodes in Pairs</title>
     <url>/2019/12/16/Swap-Nodes-in-Pairs/</url>
     <content><![CDATA[<h3 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h3><p>Given a linked list, swap every two adjacent nodes and return its head.</p>
