@@ -1,6 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Remove Element</title>
+    <url>/2019/12/19/Remove-Element/</url>
+    <content><![CDATA[<h3 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h3><p>Given an array <em>nums</em> and a value <em>val</em>, remove all instances of that value <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener"><strong>in-place</strong></a> and return the new length.</p>
+<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array in-place</strong> with O(1) extra memory.</p>
+<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
+<a id="more"></a>
+
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Given nums = [3,2,2,3], val = 3,</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">Your function should return length = 2, with the first two elements of nums being 2.</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">It doesn't matter what you leave beyond the returned length.</span></pre></td></tr></tbody></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Given nums = [0,1,2,2,3,0,4,2], val = 2,</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">Note that the order of those five elements can be arbitrary.</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">It doesn't matter what values are set beyond the returned length.</span></pre></td></tr></tbody></table></figure>
+
+<p><strong>Clarification:</strong></p>
+<p>Confused why the returned value is an integer but your answer is an array?</p>
+<p>Note that the input array is passed in by <strong>reference</strong>, which means modification to the input array will be known to the caller as well.</p>
+<p>Internally you can think of this:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">// nums is passed in by reference. (i.e., without making a copy)</span></pre></td></tr><tr><td class="code"><pre><span class="line">int len = removeElement(nums, val);</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">// any modification to nums in your function would be known by the caller.</span></pre></td></tr><tr><td class="code"><pre><span class="line">// using the length returned by your function, it prints the first len elements.</span></pre></td></tr><tr><td class="code"><pre><span class="line">for (int i = 0; i &lt; len; i++) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">    print(nums[i]);</span></pre></td></tr><tr><td class="code"><pre><span class="line">}</span></pre></td></tr></tbody></table></figure>
+
+<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">public</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> val)</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">int</span> ret = <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> (nums[i] != val) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">                nums[ret++] = nums[i];</span></pre></td></tr><tr><td class="code"><pre><span class="line">            }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> ret;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line">};</span></pre></td></tr></tbody></table></figure>
+
+<p>Runtime: <strong>8 ms</strong></p>
+<p>Memory Usage: <strong>8.7 MB</strong></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>每日一练</category>
+      </categories>
+      <tags>
+        <tag>算法题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Remove Duplicates from Sorted Array</title>
+    <url>/2019/12/19/Remove-Duplicates-from-Sorted-Array/</url>
+    <content><![CDATA[<h3 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h3><p>Given a sorted array <em>nums</em>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener"><strong>in-place</strong></a> such that each element appear only <em>once</em> and return the new length.</p>
+<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array in-place</strong> with O(1) extra memory.</p>
+<a id="more"></a>
+
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Given nums = [1,1,2],</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">It doesn't matter what you leave beyond the returned length.</span></pre></td></tr></tbody></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Given nums = [0,0,1,1,1,2,2,3,3,4],</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">It doesn't matter what values are set beyond the returned length.</span></pre></td></tr></tbody></table></figure>
+
+<p><strong>Clarification:</strong></p>
+<p>Confused why the returned value is an integer but your answer is an array?</p>
+<p>Note that the input array is passed in by <strong>reference</strong>, which means modification to the input array will be known to the caller as well.</p>
+<p>Internally you can think of this:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">// nums is passed in by reference. (i.e., without making a copy)</span></pre></td></tr><tr><td class="code"><pre><span class="line">int len = removeDuplicates(nums);</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">// any modification to nums in your function would be known by the caller.</span></pre></td></tr><tr><td class="code"><pre><span class="line">// using the length returned by your function, it prints the first len elements.</span></pre></td></tr><tr><td class="code"><pre><span class="line">for (int i = 0; i &lt; len; i++) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">    print(nums[i]);</span></pre></td></tr><tr><td class="code"><pre><span class="line">}</span></pre></td></tr></tbody></table></figure>
+
+<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">public</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> (nums.<span class="built_in">size</span>() == <span class="number">0</span>) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">int</span> ret = <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.<span class="built_in">size</span>(); i++) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> (nums[i] == nums[i<span class="number">-1</span>]) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">                <span class="keyword">continue</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            }</span></pre></td></tr><tr><td class="code"><pre><span class="line">            ret++;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            nums[ret] = nums[i];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> ret+<span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line">};</span></pre></td></tr></tbody></table></figure>
+
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>每日一练</category>
+      </categories>
+      <tags>
+        <tag>算法题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Reverse Nodes in k-Group</title>
     <url>/2019/12/17/Reverse-Nodes-in-k-Group/</url>
     <content><![CDATA[<h3 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h3><p>Given a linked list, reverse the nodes of a linked list <em>k</em> at a time and return its modified list.</p>
