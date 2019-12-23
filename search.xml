@@ -1,6 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Search Insert Position</title>
+    <url>/2019/12/23/Search-Insert-Position/</url>
+    <content><![CDATA[<h3 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h3><p>Given a sorted  array and a target value, return the index if the target is found. If  not, return the index where it would be if it were inserted in order.</p>
+<p>You may assume no duplicates in the array.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Input: [1,3,5,6], 5</span></pre></td></tr><tr><td class="code"><pre><span class="line">Output: 2</span></pre></td></tr></tbody></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Input: [1,3,5,6], 2</span></pre></td></tr><tr><td class="code"><pre><span class="line">Output: 1</span></pre></td></tr></tbody></table></figure>
+
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Input: [1,3,5,6], 7</span></pre></td></tr><tr><td class="code"><pre><span class="line">Output: 4</span></pre></td></tr></tbody></table></figure>
+
+<p><strong>Example 4:</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Input: [1,3,5,6], 0</span></pre></td></tr><tr><td class="code"><pre><span class="line">Output: 0</span></pre></td></tr></tbody></table></figure>
+
+<a id="more"></a>
+
+<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">public</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">searchInsert</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">int</span> right = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">int</span> mid = (right - left) / <span class="number">2</span> + left;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">while</span>(left &lt;= right) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">            mid = (right - left) / <span class="number">2</span> + left;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> (nums[mid] == target) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">                <span class="keyword">return</span> mid;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            } <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">                left = mid + <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            } <span class="keyword">else</span> {</span></pre></td></tr><tr><td class="code"><pre><span class="line">                right = mid - <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> (nums[mid] &lt; target) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">return</span> mid+<span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        } <span class="keyword">else</span> {</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">return</span> mid;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        }</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line">};</span></pre></td></tr></tbody></table></figure>
+
+<p>Runtime: <strong>8 ms</strong></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>每日一练</category>
+      </categories>
+      <tags>
+        <tag>算法题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Find First and Last Position of Element in Sorted Array</title>
+    <url>/2019/12/23/Find-First-and-Last-Position-of-Element-in-Sorted-Array/</url>
+    <content><![CDATA[<h3 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h3><p>Given an array of integers <code>nums</code> sorted in ascending order, find the starting and ending position of a given <code>target</code> value.</p>
+<p>Your algorithm’s runtime complexity must be in the order of <em>O</em>(log <em>n</em>).</p>
+<p>If the target is not found in the array, return <code>[-1, -1]</code>.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Input: nums = [5,7,7,8,8,10], target = 8</span></pre></td></tr><tr><td class="code"><pre><span class="line">Output: [3,4]</span></pre></td></tr></tbody></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Input: nums = [5,7,7,8,8,10], target = 6</span></pre></td></tr><tr><td class="code"><pre><span class="line">Output: [-1,-1]</span></pre></td></tr></tbody></table></figure>
+
+<a id="more"></a>
+
+<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">private</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findLeft</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">int</span> right = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">int</span> ret = <span class="number">-1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">while</span> (left &lt;= right) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">int</span> mid = (right - left) / <span class="number">2</span> + left;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> (nums[mid] == target) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">                ret = mid;</span></pre></td></tr><tr><td class="code"><pre><span class="line">                right = mid - <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            } <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">                left = mid + <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            } <span class="keyword">else</span> {</span></pre></td></tr><tr><td class="code"><pre><span class="line">                right = mid - <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> ret;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findRight</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">int</span> right = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">int</span> ret = <span class="number">-1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">while</span> (left &lt;= right) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">int</span> mid = (right - left) / <span class="number">2</span> + left;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> (nums[mid] == target) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">                ret = mid;</span></pre></td></tr><tr><td class="code"><pre><span class="line">                left = mid + <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            } <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">                left = mid + <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            } <span class="keyword">else</span> {</span></pre></td></tr><tr><td class="code"><pre><span class="line">                right = mid - <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> ret;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">public</span>:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; searchRange(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ret;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> (nums.<span class="built_in">size</span>() == <span class="number">0</span>) {</span></pre></td></tr><tr><td class="code"><pre><span class="line">            ret.emplace_back(<span class="number">-1</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">            ret.emplace_back(<span class="number">-1</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">return</span> ret;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        }</span></pre></td></tr><tr><td class="code"><pre><span class="line">        ret.emplace_back(findLeft(nums, target));</span></pre></td></tr><tr><td class="code"><pre><span class="line">        ret.emplace_back(findRight(nums, target));</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> ret;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line">};</span></pre></td></tr></tbody></table></figure>
+
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>每日一练</category>
+      </categories>
+      <tags>
+        <tag>算法题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Top-K Off-Policy Correction for a REINFORCE Recommender System</title>
+    <url>/2019/12/23/Top-K-Off-Policy-Correction-for-a-REINFORCE-Recommender-System/</url>
+    <content><![CDATA[<h1 id="论文介绍"><a href="#论文介绍" class="headerlink" title="论文介绍"></a>论文介绍</h1><p>本篇论文是2018年Google发表的论文，应该是应用在YouTube的召回层。看其他人<a href="http://wd1900.github.io/2019/06/23/Top-K-Off-Policy-Correction-for-a-REINFORCE-Recommender-System-on-Youtube/" target="_blank" rel="noopener">分享</a>说是最近两年单次上线最高收益</p>
+<p>论文链接：<a href="https://arxiv.org/pdf/1812.02353.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1812.02353.pdf</a></p>
+<h1 id="论文背景"><a href="#论文背景" class="headerlink" title="论文背景"></a>论文背景</h1><p>现在推荐系统的item在百万级别，user在十亿级别。在任意时间二者间产生的一个行为都是独一无二的。</p>
+<p>这导致用户状态空间非常复杂。日志记录的隐式反馈很方便用于学习。</p>
+<p>但是日志反馈的问题是：</p>
+<ul>
+<li>没被系统推出来的没有日志反馈，会有偏差</li>
+</ul>
+<p>论文主要做了一下几个事：</p>
+<ul>
+<li>本篇论文提出了一种  <strong>Top-K</strong>  算法可以消除此偏差。此算法基于策略梯度，即REINFORCE(此算法给出了<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.31.2545&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">参考论文</a>，笔者还未阅读)</li>
+<li>使用了一种非策略方案校准偏差</li>
+<li></li>
+</ul>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>强化学习</category>
+      </categories>
+      <tags>
+        <tag>强化学习</tag>
+        <tag>Google</tag>
+        <tag>召回</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Remove Element</title>
     <url>/2019/12/19/Remove-Element/</url>
     <content><![CDATA[<h3 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h3><p>Given an array <em>nums</em> and a value <em>val</em>, remove all instances of that value <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener"><strong>in-place</strong></a> and return the new length.</p>
